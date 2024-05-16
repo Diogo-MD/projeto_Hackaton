@@ -1,6 +1,6 @@
 <?php
 
-class Turma {
+class Area {
     // Propriedades
     Private $id;
     Private $cor;
