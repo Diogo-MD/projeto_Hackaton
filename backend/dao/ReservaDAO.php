@@ -11,7 +11,7 @@ class ReservaDAO implements BaseDAO {
         $this->db = Database::getInstance();
     }
 
-    public function getById($id) {
+    public function getById($id) {        
         try {
             // Preparar a consulta SQL
             $sql = "SELECT * FROM Reserva WHERE Id = :id";
@@ -87,33 +87,35 @@ class ReservaDAO implements BaseDAO {
         }
     }
     
-    public function update($reserva) {
-        try {
-            $sql = "UPDATE Reserva 
-                    SET Inicio = :inicio, Fim = :fim, Periodo = :periodo, TurmaID = :turmaid, SalaId = :salaId
-                    WHERE Id = :id";
+    public function update($reserva) {         
+    try {
+        $sql = "UPDATE Reserva 
+                SET Inicio = :inicio, Fim = :fim, Periodo = :periodo, TurmaID = :turmaId, SalaID = :salaId
+                WHERE ID = :id";
 
-            $stmt = $this->db->prepare($sql);
-            $id = $reserva->getId();
-            $inicio = $reserva->getInicio();
-            $fim = $reserva->getFim();
-            $periodo = $reserva->getPeriodo();
-            $turmaId = $reserva->getTurmaId();
-            $salaId = $reserva->getSalaId();
-    
-            $stmt->bindParam(':id', $id);
-            $stmt->bindParam(':inicio', $inicio);
-            $stmt->bindParam(':fim', $fim);
-            $stmt->bindParam(':periodo', $periodo);
-            $stmt->bindParam(':turmaId', $turmaId);
-            $stmt->bindParam(':salaId', $salaId);
-    
-            return $stmt->execute();
-        } catch (PDOException $e) {
-            // Handle exception (e.g., log error)
-            return false;
-        }
+        $stmt = $this->db->prepare($sql);
+        
+        $id = $reserva->getId();
+        $inicio = $reserva->getInicio();
+        $fim = $reserva->getFim();
+        $periodo = $reserva->getPeriodo();
+        $turmaId = $reserva->getTurmaId();
+        $salaId = $reserva->getSalaId();
+
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':inicio', $inicio);
+        $stmt->bindParam(':fim', $fim);
+        $stmt->bindParam(':periodo', $periodo);
+        $stmt->bindParam(':turmaId', $turmaId);
+        $stmt->bindParam(':salaId', $salaId);
+
+        return $stmt->execute();
+    } catch (PDOException $e) {
+        // Handle exception (e.g., log error)
+        return false;
     }
+}
+
     
     public function delete($id) {
         try {

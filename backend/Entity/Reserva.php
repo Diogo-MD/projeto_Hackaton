@@ -42,6 +42,14 @@ class Reserva {
     public function getSalaId() {
         return $this->salaId;
     }
+
+    public function setPeriodo($periodo) {
+        $this->periodo = $periodo;
+    }
+
+    public function setSalaID($salaId) {
+        $this->id = $salaId;
+    }
 }
 
 
