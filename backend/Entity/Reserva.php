@@ -1,6 +1,6 @@
 <?php
 
-class Turma {
+class Reserva {
     // Propriedades
     Private $id;
     Private $inicio;
