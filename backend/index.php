@@ -8,7 +8,7 @@ require_once('../backend/dao/TurmaDAO.php');
 require_once("../backend/Entity/Reserva.php");
 
 $reservaDAO = new ReservaDAO();
-$reserva = new Reserva (3, '2024-05-22', '2024-05-22', 'Noite', 3, 3);
+$reserva = new Reserva (3, '2024-05-22', '2024-05-22', 'Tarde', 3, 3);
 echo $reservaDAO->update($reserva);
 ?>
 
@@ -18,7 +18,7 @@ echo $reservaDAO->update($reserva);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento </title>
-    <link rel="stylesheet" href="../frontend/css/style..css">
+    <link rel="stylesheet" href="../frontend/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Sanchez:ital@0;1&display=swap" rel="stylesheet"> 
 </head>
 <body>
@@ -119,6 +119,9 @@ echo $reservaDAO->update($reserva);
     </header>
       
     <main>
+
+        <!-- PAINEIS ATUALIZADOS PARA VISUALIZAÇÃO -->
+
         <section>
             <div id="data-atual">
                 <p>Aulas de Hoje - 14/05/2024</p>
@@ -126,138 +129,102 @@ echo $reservaDAO->update($reserva);
             <div class="cards">
                 <div class="card-turnos">
                     <h3>Manhã</h3>
-                    <div id="mini-card-salas">
-                            <tr>
-                                <td>Arquitetura e Urbanismo</td>
-                                <td>Regina</td>
-                                <td>Sala-18 8:30-12:30</td>
-                            </tr>
+                    <div class="mini-card-salas">                            
+                        <p>Arquitetura e Urbanismo</p>
+                        <p>Regina - Sala-18</p>
+                        <p>8:30 - 12:30</p>                            
                     </div>
-                    <div id="mini-card-salas">
-                        <tr>
-                            <td>Arquitetura e Urbanismo</td>
-                            <td>Regina</td>
-                            <td>Sala-18 8:30-12:30</td>
-                        </tr>
+                    <div class="mini-card-salas">                            
+                        <p>Arquitetura e Urbanismo</p>
+                        <p>Regina - Sala-18</p>
+                        <p>8:30 - 12:30</p>                            
                     </div>
-                    <div id="mini-card-salas">
-                        <tr>
-                            <td>Arquitetura e Urbanismo</td>
-                            <td>Regina</td>
-                            <td>Sala-18 8:30-12:30</td>
-                        </tr>
+                    <div class="mini-card-salas">                            
+                        <p>Arquitetura e Urbanismo</p>
+                        <p>Regina - Sala-18</p>
+                        <p>8:30 - 12:30</p>                            
                     </div>
-                    <div id="mini-card-salas">
-                        <tr>
-                            <td>Arquitetura e Urbanismo</td>
-                            <td>Regina</td>
-                            <td>Sala-18 8:30-12:30</td>
-                        </tr>
+                    <div class="mini-card-salas">                            
+                        <p>Arquitetura e Urbanismo</p>
+                        <p>Regina - Sala-18</p>
+                        <p>8:30 - 12:30</p>                            
                     </div>
-                    <div id="mini-card-salas">
-                        <tr>
-                            <td>Arquitetura e Urbanismo</td>
-                            <td>Regina</td>
-                            <td>Sala-18 8:30-12:30</td>
-                        </tr>
+                    <div class="mini-card-salas">                            
+                        <p>Arquitetura e Urbanismo</p>
+                        <p>Regina - Sala-18</p>
+                        <p>8:30 - 12:30</p>                            
                     </div>
-                    <div id="mini-card-salas">
-                        <tr>
-                            <td>Arquitetura e Urbanismo</td>
-                            <td>Regina</td>
-                            <td>Sala-18 8:30-12:30</td>
-                        </tr>
+                    <div class="mini-card-salas">                            
+                        <p>Arquitetura e Urbanismo</p>
+                        <p>Regina - Sala-18</p>
+                        <p>8:30 - 12:30</p>                            
                     </div>
                 </div>    
                 <div class="card-turnos">
                     <h3>Tarde</h3>
-                    <div id="mini-card-salas">
-                        <tr>
-                            <td>Arquitetura e Urbanismo</td>
-                            <td>Regina</td>
-                            <td>Sala-18 8:30-12:30</td>
-                        </tr>   
+                    <div class="mini-card-salas">                            
+                        <p>Arquitetura e Urbanismo</p>
+                        <p>Regina - Sala-18</p>
+                        <p>8:30 - 12:30</p>                            
                     </div>
-                    <div id="mini-card-salas">
-                        <tr>
-                            <td>Arquitetura e Urbanismo</td>
-                            <td>Regina</td>
-                            <td>Sala-18 8:30-12:30</td>
-                        </tr>   
+                    <div class="mini-card-salas">                            
+                        <p>Arquitetura e Urbanismo</p>
+                        <p>Regina - Sala-18</p>
+                        <p>8:30 - 12:30</p>                            
                     </div>
-                    <div id="mini-card-salas">
-                        <tr>
-                            <td>Arquitetura e Urbanismo</td>
-                            <td>Regina</td>
-                            <td>Sala-18 8:30-12:30</td>
-                        </tr>   
+                    <div class="mini-card-salas">                            
+                        <p>Arquitetura e Urbanismo</p>
+                        <p>Regina - Sala-18</p>
+                        <p>8:30 - 12:30</p>                            
                     </div>
-                    <div id="mini-card-salas">
-                        <tr>
-                            <td>Arquitetura e Urbanismo</td>
-                            <td>Regina</td>
-                            <td>Sala-18 8:30-12:30</td>
-                        </tr>
+                    <div class="mini-card-salas">                            
+                        <p>Arquitetura e Urbanismo</p>
+                        <p>Regina - Sala-18</p>
+                        <p>8:30 - 12:30</p>                            
                     </div>
-                    <div id="mini-card-salas">
-                        <tr>
-                            <td>Arquitetura e Urbanismo</td>
-                            <td>Regina</td>
-                            <td>Sala-18 8:30-12:30</td>
-                        </tr>
+                    <div class="mini-card-salas">                            
+                        <p>Arquitetura e Urbanismo</p>
+                        <p>Regina - Sala-18</p>
+                        <p>8:30 - 12:30</p>                            
                     </div>
-                    <div id="mini-card-salas">
-                        <tr>
-                            <td>Arquitetura e Urbanismo</td>
-                            <td>Regina</td>
-                            <td>Sala-18 8:30-12:30</td>
-                        </tr>
+                    <div class="mini-card-salas">                            
+                        <p>Arquitetura e Urbanismo</p>
+                        <p>Regina - Sala-18</p>
+                        <p>8:30 - 12:30</p>                            
                     </div>
                 </div>
                 <div class="card-turnos">
                     <h3>Noite</h3>
-                        <div id="mini-card-salas">
-                            <tr>
-                                <td>Arquitetura e Urbanismo</td>
-                                <td>Regina</td>
-                                <td>Sala-18 8:30-12:30</td>
-                            </tr>   
-                        </div>
-                        <div id="mini-card-salas">
-                            <tr>
-                                <td>Arquitetura e Urbanismo</td>
-                                <td>Regina</td>
-                                <td>Sala-18 8:30-12:30</td>
-                            </tr>   
-                        </div>
-                        <div id="mini-card-salas">
-                            <tr>
-                                <td>Arquitetura e Urbanismo</td>
-                                <td>Regina</td>
-                                <td>Sala-18 8:30-12:30</td>
-                            </tr>   
-                        </div>
-                        <div id="mini-card-salas">
-                            <tr>
-                                <td>Arquitetura e Urbanismo</td>
-                                <td>Regina</td>
-                                <td>Sala-18 8:30-12:30</td>
-                            </tr>
-                        </div>
-                        <div id="mini-card-salas">
-                            <tr>
-                                <td>Arquitetura e Urbanismo</td>
-                                <td>Regina</td>
-                                <td>Sala-18 8:30-12:30</td>
-                            </tr>
-                        </div>
-                        <div id="mini-card-salas">
-                            <tr>
-                                <td>Arquitetura e Urbanismo</td>
-                                <td>Regina</td>
-                                <td>Sala-18 8:30-12:30</td>
-                            </tr>
-                        </div>                            
+                    <div class="mini-card-salas">                            
+                        <p>Arquitetura e Urbanismo</p>
+                        <p>Regina - Sala-18</p>
+                        <p>8:30 - 12:30</p>                            
+                    </div>
+                    <div class="mini-card-salas">                            
+                        <p>Arquitetura e Urbanismo</p>
+                        <p>Regina - Sala-18</p>
+                        <p>8:30 - 12:30</p>                            
+                    </div>
+                    <div class="mini-card-salas">                            
+                        <p>Arquitetura e Urbanismo</p>
+                        <p>Regina - Sala-18</p>
+                        <p>8:30 - 12:30</p>                            
+                    </div>
+                    <div class="mini-card-salas">                            
+                        <p>Arquitetura e Urbanismo</p>
+                        <p>Regina - Sala-18</p>
+                        <p>8:30 - 12:30</p>                            
+                    </div>
+                    <div class="mini-card-salas">                            
+                        <p>Arquitetura e Urbanismo</p>
+                        <p>Regina - Sala-18</p>
+                        <p>8:30 - 12:30</p>                            
+                    </div>
+                    <div class="mini-card-salas">                            
+                        <p>Arquitetura e Urbanismo</p>
+                        <p>Regina - Sala-18</p>
+                        <p>8:30 - 12:30</p>                            
+                    </div>                            
                 </div>
             </div>
         </section>
