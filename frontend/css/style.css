@@ -77,7 +77,7 @@ main {
   }
   
   /* Full-width inputs */
-  #loginADM input[type=text], #loginADM input[type=password] {
+  #loginADM input{
     width: 100%;
     padding: 12px 20px;
     margin: 5px 0;
