@@ -1,3 +1,15 @@
+<?php
+
+require_once('../backend/dao/AreaDAO.php');
+require_once('../backend/dao/CursoDAO.php');
+require_once('../backend/dao/DocenteDAO.php');
+require_once('../backend/dao/ReservaDAO.php');
+require_once("../backend/Entity/Reserva.php");
+require_once('../backend/dao/SalaDAO.php');
+require_once('../backend/dao/TurmaDAO.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

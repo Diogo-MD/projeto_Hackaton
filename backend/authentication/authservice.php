@@ -2,40 +2,51 @@
 require_once '../Entity/Usuario.php';
 require_once '../dao/UsuarioDAO.php';
 
-$type = filter_input(INPUT_POST, "type");
+session_start(); // Inicia a sessão
 
-if ($type === "register") {
-        // Lógica de registro do usuário
-        $new_nome = filter_input(INPUT_POST, "new_nome");
-        $new_email = filter_input(INPUT_POST, "new_email", FILTER_SANITIZE_EMAIL);
-        $new_password = filter_input(INPUT_POST, "new_password");
-        $confirm_password = filter_input(INPUT_POST, "confirm_password");
+// Verifica se o formulário de login foi submetido
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verifica se os campos de usuário e senha foram preenchidos
+    if (!empty($_POST['uname']) && !empty($_POST['password'])) {
+        $username = $_POST['uname'];
+        $password = $_POST['password'];
+        
+        // Conexão com o banco de dados (substitua as informações conforme necessário)
+        $servername = "localhost";
+        $username_db = "MapaSala";
+        $password_db = "root";
+        $dbname = "";
 
-        if($new_email && $new_nome && $new_password) {
-            if ($new_password === $confirm_password) {
-                // Criptografando a senha
-                $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+        // Cria a conexão
+        $conn = new mysqli($servername, $username_db, $password_db, $dbname);
 
-                // Objeto New Usuário         Propriedades abaixo
-                $usuario = new Usuario(null, $new_nome, $hashed_password, $new_email, null, 1, null, null);
-                $usuarioDAO = new UsuarioDAO();
-                $success = $usuarioDAO->create($usuario);
+        // Verifica se houve erro na conexão
+        if ($conn->connect_error) {
+            die("Conexão falhou: " . $conn->connect_error);
+        }
 
-                if($success) {
-                header("Location: index.php");
-                exit();
-                } else {
-                    // Tratar a falhar de registro em BD
-                }
+        // Consulta SQL para verificar se o usuário existe e a senha está correta
+        $sql = "SELECT id FROM usuarios WHERE username='$username' AND password='$password'";
+        $result = $conn->query($sql);
+
+        // Se houver um resultado, o login é bem-sucedido
+        if ($result->num_rows == 1) {
+            // Autenticação bem-sucedida, redireciona para a página desejada
+            header("Location: ../alt.php");
+            exit();
         } else {
-            // To Do: Exibir mensagem de senhas incompativeis
+            // Autenticação falhou, redireciona de volta para a página de login com uma mensagem de erro
+            header("Location: ../alt.php");
+            exit();
         }
     } else {
-        // To Do: Exibir mensagem de formulário inválido
+        // Caso algum dos campos esteja vazio, redireciona de volta para a página de login com uma mensagem de erro
+        header("Location: sua_pagina_de_login.php?erro=2");
+        exit();
     }
-} elseif ($type === "login") {
-    // To Do : Verificar se o usuário tem cadastro
-    // Dar ao usuário um token de sessão para navegar no site
+} else {
+    // Caso a requisição não seja POST, redireciona de volta para a página de login
+    header("Location: ../index.php");
+    exit();
 }
-
 ?>
