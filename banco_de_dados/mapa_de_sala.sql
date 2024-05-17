@@ -28,8 +28,8 @@ CREATE TABLE IF NOT EXISTS Turma (
   ID INT AUTO_INCREMENT PRIMARY KEY,
   Nome VARCHAR(100) NOT NULL,
   Oferta INT NOT NULL,
-  CursoID INT NOT NULL,
-  DocenteID INT NOT NULL,
+  CursoID INT,
+  DocenteID INT,
   FOREIGN KEY (DocenteID) REFERENCES Docente(ID),
   FOREIGN KEY (CursoID) REFERENCES Curso(ID)
 );
@@ -46,10 +46,15 @@ CREATE TABLE IF NOT EXISTS Reserva (
   Inicio DATE NOT NULL,
   Fim DATE NOT NULL,
   Periodo ENUM ('Manhã', 'Tarde', 'Noite'),
-  TurmaID INT NOT NULL,
-  SalaID INT NOT NULL,
+  TurmaID INT,
+  SalaID INT,
   FOREIGN KEY (TurmaID) REFERENCES Turma(ID),
   FOREIGN KEY (SalaID) REFERENCES Sala(ID)
 );
 
-DROP DATABASE MAPASALA
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+use mapasala;

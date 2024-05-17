@@ -6,8 +6,15 @@ require_once('../backend/dao/ReservaDAO.php');
 require_once("../backend/Entity/Reserva.php");
 require_once('../backend/dao/SalaDAO.php');
 require_once('../backend/dao/TurmaDAO.php');
+
+$reservaDAO = new ReservaDAO();
+$reserva = new Reserva (3, '1000-10-10', '2024-05-22', 'Noite', 3, 3);
+echo $reservaDAO->update($reserva);
+
 $reservaDAO = new reservaDAO();
-$reservas = $reservaDAO->getAll()   
+$reservas = $reservaDAO->getAll();
+
+
 
 ?>
 
