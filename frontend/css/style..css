@@ -1,0 +1,552 @@
+body {
+    font-family: Sanchez;
+    margin: 0;
+}
+
+#global-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+
+/* MOBILE de 320px a 720px*/
+
+
+/* MENU */
+
+#menu {
+    padding: 15px 15px 80px 15px;
+    background-color: #004A8D;    
+    border-bottom: 5px solid #F7941D;
+    box-shadow: rgb(80, 80, 80);
+}
+
+#topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+}
+
+#topo p {
+    color: rgba(255, 255, 255, 0.404);
+    font-size: 0.9em;
+    margin: 15px;
+    text-align: center;
+}
+
+#logo {
+    max-width: 120px;
+    width: 25%;
+    height: 100%;
+}
+
+#topo-text {
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+#botaoLogin {
+    border: none;
+    height: 40px;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #2967F4;
+    color: white;
+    box-shadow: 1px 1px 1px rgb(78, 78, 78);
+}
+
+#botaoLogin:hover {
+    background-color: #5c88f8;
+}
+
+/* MODAL LOGIN */
+
+/* Bordered form */
+#loginADM {
+    border: 3px solid #f1f1f1;
+    border-radius: 10px;
+    max-width: 350px;
+    margin: auto;
+  }
+  
+  /* Full-width inputs */
+  #loginADM input[type=text], #loginADM input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 5px 0;
+    height: 30px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  #loginADM button {
+    background-color: #F7941D;
+    color: white;
+    padding: 0 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    height: 30px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* Add a hover effect for buttons */
+  #loginADM button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra style for the cancel button (red) */
+  #loginADM .cancelbtn {
+    width: 100%;
+    padding: 0px 18px;
+    background-color: #004A8D;
+  }
+  
+  /* Center the avatar image inside this container */
+  #loginADM .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+  
+  /* Logo Senac */
+  #loginADM img.avatar {
+    width: 40%;
+    /* border-radius: 50%; */
+  }
+  
+  /* Add padding to containers */
+  #loginADM .container {
+    padding: 16px; 
+  }
+  
+  /* The "Forgot password" text */
+  span.psw {
+    /* float: right; */
+    /* padding-top: 16px; */
+    font-size: 0.9em;
+    text-align: center;
+    width: 100%;
+  }
+
+/* The Modal (background) */
+.modalLogCad {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10000; /* Sit on top */
+    left: 0;
+    top: 0;
+    margin: auto;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; 
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;/* 15% from the top and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    /* Position it in the top right corner outside of the modal */
+    /* position: absolute; */
+    /* right: 25px;
+    top: 0; */
+    z-index: 1;
+    float: right;
+    margin-right: 20px;
+    position: absolute;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  /* Close button on hover */
+  .close:hover,
+  .close:focus {
+    color: #004A8D;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+  }
+  
+  @keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+  }
+
+
+
+
+/* FILTROS */
+
+#filtros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filtro {
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  width: 120px;
+  height: 30px;
+  text-indent: 5px;
+  padding: 1px;
+  margin: 15px 10px 0;
+  font-family: sanchez;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #004A8D;
+}
+
+
+/* CARDS VIZUALIZAÇÃO */
+
+
+#data-atual {
+    color: white;
+    text-align: center;
+    margin: -80px 0;
+    font-size: 1.1em;
+}
+
+.cards {
+    margin: 90px 10px;  
+}
+
+.card-turnos {
+    text-align: center;
+    font-size: small;
+    font-family: Sanchez;
+    margin: 10px;
+    color: #316bff;    
+    border-radius: 2px;
+    background-color: white;
+    padding: 5% 5%;
+    z-index: 1000;
+    box-shadow: 1px 2px 2px 1px rgb(80, 80, 80);
+}
+
+#mini-card-salas {
+    padding: 5%;
+    margin: 5%;
+    background-color: #6a93fd;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 1px 2px 2px rgb(80, 80, 80);
+}
+
+#footer {
+    height: 80px;
+    background-color: #004A8D;    
+    border-top: 5px solid #F7941D;
+}
+
+
+/* ------------------ */
+/* PÁG ADMINISTRADOR */
+
+
+/* AGENDAMENTO */
+
+#acoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#acao-atual {
+    font-family: sanchez;
+    color: #004A8D;
+    margin: 10px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.botao-acoes {
+    font-family: sanchez;
+    color: #004A8D;
+    margin: 10px;
+    font-size: small;
+}
+
+.botao-acoes:hover {
+    text-decoration: underline;    
+}
+
+#filtros-agendamento {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.filtro-agn {
+    padding: 2px 5px;
+    margin: 5px 10px;
+    border: none;
+    background-color: #004A8D;
+    color: white;
+    border-radius: 2px;
+}
+
+#periodos {
+    display: flex;
+    align-items: center;
+    font-size: smaller;
+}
+
+/* CAMPOS PREENCHIMENTO */
+
+#campos-preenchimento {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    color: #004A8D;
+}
+
+.campos {
+    margin: 5px;
+}
+
+.input {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 120px;
+  border: none;
+  border-radius: 3px;
+  background-color: #D9D9D9;
+  padding: 2px;
+  margin: 1px;
+}
+
+.botoes {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  border: none;
+  background-color: #FF9D0A;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 2px;
+}
+
+/* CALENDÁRIO */
+
+#container-calendario {
+  display: none;
+}
+
+
+/* ----------------- */
+/* A PARTIR DE 720px */
+
+@media screen and (min-width: 720px) {
+
+    /* TOPO */
+
+    #logo {
+        width: 15%;
+        height: 100%;
+    }
+    
+    /* CARDS VIZUALIZAÇÃO */
+
+
+    #data-atual {
+        color: white;
+        text-align: center;
+        margin: -50px 10px;
+        font-size: small;
+    }
+
+    .cards {
+        display: flex;
+        justify-content: center; 
+        margin: 60px 10px;  
+    }
+
+    .card-turnos {
+        text-align: center;
+        font-size: 10px;
+        font-family: Sanchez;
+        margin: 0 10px;
+        color: #374A7C;
+        width: 20%;    
+        border-radius: 2px;
+        background-color: white;
+        padding: 0 5%;
+        z-index: 1000;
+        box-shadow: 1px 2px 2px rgb(80, 80, 80);
+    }
+
+    #mini-card-salas {
+        padding: 1%;
+        background-color: #6a93fd;
+        border-radius: 5px;
+        color: white;
+        box-shadow: 1px 2px 2px rgb(80, 80, 80);
+    }
+
+    /* --------------- */
+    /* PÁG. ALTERAÇÕES */
+
+    /* CAMPOS PREENCHIMENTO */
+
+    #container-agendamento {
+      display: flex;
+      margin: 20px;
+    }
+
+    #campos-preenchimento {
+      width: 50%;
+    }
+
+    /* CALENDÁRIO */
+
+    ul {list-style-type: none;}
+
+    #container-calendario{
+      display: block;
+      width: 400px;
+      box-shadow: 1px 1px 9px black;
+      border-radius: 10px;
+      margin: 30px 0;
+    }
+      /* Month header */
+    .month {
+      /* padding: 70px 25px; */
+      width: 100%;
+      background: #004A8D;
+      text-align: center;
+      border-radius: 10px 10px 0 0;
+    }
+    
+    /* Month list */
+    .month ul {
+      margin: 0;
+      padding: 10px;
+    }
+    
+    .month ul li {
+      color: white;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    
+    /* Previous button inside month header */
+    .month .prev {
+      float: left;
+      padding-top: 10px;
+    }
+    
+    /* Next button */
+    .month .next {
+      float: right;
+      padding-top: 10px;
+    }
+    
+    /* Weekdays (Mon-Sun) */
+    .weekdays {
+      margin: 0;
+      height: 30px;
+      padding: auto;
+      padding-top: 10px;
+      background-color:#fff;
+    }
+    
+    .weekdays li {
+      display: inline-block;
+      width: 11.6%;
+      color: #666;
+      text-align: center;
+      font-size: 12px;
+    }
+    
+    /* Days (1-31) */
+    .days {
+      border-radius: 0 0 10px 10px;
+      padding: 20px auto;
+      background: #fff;
+      margin: 0;
+    }
+    
+    .days li {
+      margin: 5px 0px;
+      list-style-type: none;
+      display: inline-block;
+      width: 11.6%;
+      text-align: center;
+      margin-bottom: 5px;
+      font-size:12px;
+      color: #777;
+    }
+    
+    /* Highlight the "current" day */
+    .parcial {
+      padding: 3px 0;
+      border-radius: 5px;
+      background: #FDC180;
+      color: white !important
+    }
+    .domingo{
+      padding: 3px 0;
+      border-radius: 5px;
+      background: #2D2D2D;
+      color: white !important
+    }
+    .dias{
+      padding: 3px 0;
+      border-radius: 5px;
+      background: #FF9D0A;
+      color: white !important
+    }
+    .indispo{
+      padding: 3px 0px;
+      border-radius: 5px;
+      background: #C5C5C5;
+      color: white !important
+    }
+    .dispo{
+      padding: 3px 0px;
+      border-radius: 5px;
+      background: #004A8D;
+      color: white !important
+    }
+    
+}
