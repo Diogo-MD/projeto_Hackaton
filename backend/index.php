@@ -100,6 +100,9 @@ $reservas = $reservaDAO->getAll()
                 <div id="data-atual">
                     <p>Aulas de Hoje - 14/05/2024</p>
                 </div>
+
+
+
                 <div class="cards">
                     <div class="card-turnos">
                         <h3>Manhã</h3>
@@ -117,11 +120,10 @@ $reservas = $reservaDAO->getAll()
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         </div>
-                    </div>
 
+                        <a href="./alt.php">aaaaaaaaaaaaaaaaaaaa</a>
 
-                <div class="cards">
-                    <div class="card-turnos">
+                        <div class="card-turnos">
                         <h3>Tarde</h3>
                             <?php foreach ($reservas as $reserva) : ?>
                                 <?php if ($reserva->getPeriodo() === 'Tarde') : ?>
@@ -137,11 +139,8 @@ $reservas = $reservaDAO->getAll()
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         </div>
-                    </div>
 
-
-                <div class="cards">
-                    <div class="card-turnos">
+                        <div class="card-turnos">
                         <h3>Noite</h3>
                             <?php foreach ($reservas as $reserva) : ?>
                                 <?php if ($reserva->getPeriodo() === 'Noite') : ?>
@@ -157,7 +156,10 @@ $reservas = $reservaDAO->getAll()
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         </div>
+
+
                     </div>
+
 
 
                 </section>
@@ -170,6 +172,6 @@ $reservas = $reservaDAO->getAll()
             <span>Desenvolvido pela equipe de TII04 e TII05</span>
         </section>
     </footer>
-    <script src="js/script.js"></script>
+    <script src="../frontend/js/script.js"></script>
 </body>
 </html>

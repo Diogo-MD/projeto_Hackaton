@@ -10,6 +10,22 @@ function abreFechaLogin(){
     modalLogin.style.display = "block";
     modalCad.style.display = "none";
 }
+
+// Interação Filtros-Home
+
+let filManha = document.getElementById('manha-home')
+let filTarde = document.getElementById('tarde-home')
+let filNoite = document.getElementById('noite-home')
+
+function colunasVisu(){
+    if (filManha.checked) {
+        document.getElementById('card-manha').style.display = "block"
+        document.getElementById('card-tarde').style.display = "none"
+        document.getElementById('card-noite').style.display = "none"
+    }
+}
+
+
 // Interação Agendamento
 let ctnAgendar = document.getElementById('agendamento')
 let ctnAlterar = document.getElementById('alterar-agenda')
@@ -29,3 +45,4 @@ function gerar(){
     ctnAlterar.style.display = "none"
     ctnRelatar.style.display = "block"
 }
+
